@@ -1,0 +1,87 @@
+<!-- html 5 -->
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Regexp tests</title>
+    <!-- link:css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- script:src -->
+    <script src="script.js"></script>
+    <!-- <script async src="script.js"></script> -->
+    <!-- <script>
+        console.log('Hello from inline');
+    </script> -->
+</head>
+
+<body>
+    <h1>Regexp tests</h1>
+    <!-- .container -->
+    <div class="container">
+
+        <!-- h3{Description:}+textarea#description>lorem20 -->
+        <h3>Description:</h3>
+        <textarea class="input"
+            id="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum explicabo quisquam in optio sequi non quam commodi saepe natus beatae consectetur, assumenda debitis adipisci amet asperiores deserunt et corporis eligendi esse quidem ut magni magnam. Blanditiis, maxime? Aspernatur, quam sit.</textarea>
+
+        <!-- h3{Type regexp here:}+textarea#regexp -->
+        <h3>Type regexp here:</h3>
+        <textarea class="input" id="regexp">a+b*</textarea>
+
+        <!-- h3{Samples:}+.samples>.sample*6>input[placeholder="Sample"]+.answer.no-match>span{Don't match} -->
+        <h3>Samples:</h3>
+        <div class="samples">
+            <div class="sample">
+                <input class="input" type="text" placeholder="Sample">
+                <div class="answer no-match"><span>Don't match</span></div>
+            </div>
+            <div class="sample">
+                <input class="input" type="text" placeholder="Sample">
+                <!-- 
+                -->
+                <div class="answer no-match"><span>Don't match</span></div>
+            </div>
+            <div class="sample">
+                <input class="input" type="text" placeholder="Sample">
+                <div class="answer no-match"><span>Don't match</span></div>
+            </div>
+            <div class="sample">
+                <input class="input" type="text" placeholder="Sample">
+                <div class="answer no-match"><span>Don't match</span></div>
+            </div>
+            <div class="sample">
+                <input class="input" type="text" placeholder="Sample">
+                <div class="answer no-match"><span>Don't match</span></div>
+            </div>
+            <div class="sample">
+                <input class="input" type="text" placeholder="Sample">
+                <div class="answer no-match"><span>Don't match</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="flex">
+        <div class="test">1</div>
+        <div class="test">2</div>
+        <div class="test">3</div>
+        <div class="test">4</div>
+        <div class="test">5</div>
+        <div class="test">6</div>
+        <div class="test">7</div>
+        <div class="test">8</div>
+        <div class="test">9</div>
+        <div class="test">10</div>
+        <div class="test">11</div>
+        <div class="test">12</div>
+        <div class="test">13</div>
+
+    </div> -->
+
+    <!-- <script src="script.js"></script> -->
+
+</body>
+
+</html>

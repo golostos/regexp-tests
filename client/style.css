@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap&subset=cyrillic');
+
+html {
+    font-size: 16px;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(223, 217, 217);
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+.container {
+    min-width: 300px;
+    max-width: 1200px;
+
+    margin: 0 auto;
+    /* display: none; */
+}
+
+textarea {
+    width: 100%;
+    height: 5rem;
+    resize: none;
+}
+
+.input {
+    border: 2px solid rgb(197, 197, 197);
+    border-radius: 5px;
+    outline: none;
+    padding: 5px;
+}
+
+.input:hover {
+    border-color: rgb(155, 155, 155);
+}
+
+.input:focus {
+    border-color: blue;
+}
+
+.sample {
+    margin-bottom: 5px;
+    display: flex;
+}
+
+.sample input {
+    height: 2.2rem;
+    /* width: 70%; */
+    flex-grow: 1;
+}
+
+.answer {
+    /* width: 29%; */
+    width: 10rem;
+    margin-left: .5rem;
+    height: 2.2rem;
+    /* display: inline-block; */
+    border: .125rem solid black;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    /* vertical-align: top; */
+    line-height: 2rem;
+
+}
+
+.no-match {
+    border-color: rgb(207, 3, 3);
+    background-color: rgb(235, 21, 21);
+}
+
+/* body div {
+    background-color: red;
+}
+
+div {
+    background-color: blue;
+} */
+
+
+.test {
+    min-height: 50px;
+    min-width: 50px;
+    background-color: red;
+    margin: 5px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 300px;
+    justify-content: flex-start;    
+    align-items: flex-end;
+}
