@@ -4,9 +4,18 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "gulp",
+    "build-css": "sass --watch client/src/test_sass.scss client/dest/test.css"
   },
   "keywords": [],
   "author": "Alexander Dmitriev",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.12.0",
+    "sass": "^1.23.0",
+    "webpack": "^4.41.0"
+  }
 }
