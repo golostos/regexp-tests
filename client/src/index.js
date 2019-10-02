@@ -1,15 +1,18 @@
-var someVar = 10;
-let letVar = 20;
-document.addEventListener('DOMContentLoaded', () => {
-    let regexp = document.querySelector('#regexp');
-    // console.log(document.querySelector('.sample:nth-child(2) input'))
-    const listener = (event) => {
-        console.log(event.target.value)
-    }
-    regexp.addEventListener('input', listener)
-    // regexp.removeEventListener('input', listener)
+import { getDataFromServer } from "./js-modules/get-data";
+import { createSamples } from "./js-modules/samples";
 
-    document.querySelector('.samples').oninput = event => {
-        console.log(event.target.value)
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    const regexp = document.querySelector('#regexp');
+    getDataFromServer('/db.json', (db) => {
+        regexp.value = db.regexp;
+        createSamples(db.samples);
+    })
+    // const listener = (event) => {
+    //     console.log(event.target.value)
+    // }
+    // regexp.addEventListener('input', listener)
+
+    // document.querySelector('.samples').oninput = event => {
+    //     console.log(event.target.value)
+    // }
 })
