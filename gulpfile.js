@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const webpack = require('webpack');
 const path = require('path');
+const webpackConfig = require('./webpack.config')
 sass.compiler = require('node-sass');
 
 gulp.task('build-css', () => {
@@ -11,17 +12,10 @@ gulp.task('build-css', () => {
 })
 
 gulp.task('build-js', (done) => {
-    webpack({
-        entry: path.resolve(__dirname,'client/src/index.js'),
-        output: {
-            filename: 'main.js',
-            path: path.resolve(__dirname, 'client/dest'),
-        },
-        devtool: 'inline-source-map',
-    }, (err, stats) => {
+    webpack(webpackConfig, (err, stats) => {
         if (err || stats.hasErrors()) {
-            console.error(stats);
-            return;
+            console.error(err || stats.toJson('errors-only'));
+            // return;
         }
         done();
     })
