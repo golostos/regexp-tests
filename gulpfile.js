@@ -5,9 +5,13 @@ const path = require('path');
 const webpackConfig = require('./webpack.config')
 sass.compiler = require('node-sass');
 
+const autoprefixer = require('autoprefixer')
+const postcss = require('gulp-postcss')
+
 gulp.task('build-css', () => {
     return gulp.src('./client/src/style.scss', { sourcemaps: true })
         .pipe(sass())
+        .pipe(postcss([ autoprefixer() ]))
         .pipe(gulp.dest('./client/dest', { sourcemaps: true }))
 })
 

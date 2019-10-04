@@ -11,8 +11,8 @@
 .answer {
     /* width: 29%; */
     display: flex;
-    /* justify-content: center;
-    align-items: center; */
+    justify-content: center;
+    align-items: center;
     width: 10rem;
     margin-left: .5rem;
     height: 2.2rem;
@@ -24,7 +24,7 @@
     /* vertical-align: top; */
     /* line-height: 2rem; */
     span {
-        margin: auto;
+        // margin: auto;
     }
 }
 
