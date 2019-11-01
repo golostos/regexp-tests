@@ -1,0 +1,10 @@
+{
+    "description": "Hello",
+    "regexp": "e+f*",
+    "samples": [
+        "ef",
+        "efff",
+        "hello World",
+        "f"
+    ]
+}

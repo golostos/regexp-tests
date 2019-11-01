@@ -1,0 +1,13 @@
+POST http://localhost:4000/api/newtask HTTP/1.1
+content-type: application/json
+
+{
+    "description": "Hello2",
+    "regexp": "e+f*",
+    "samples": [
+        "ef",
+        "efff",
+        "hello World",
+        "f"
+    ]
+}

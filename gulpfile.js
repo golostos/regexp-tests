@@ -8,6 +8,15 @@ sass.compiler = require('node-sass');
 const autoprefixer = require('autoprefixer')
 const postcss = require('gulp-postcss')
 
+const browserSync = require('browser-sync').create();
+gulp.task('browser-sync', function(done) {
+    browserSync.init({
+        proxy: "localhost:3000",
+        port: 4000
+    });
+    done()
+});
+
 gulp.task('build-css', () => {
     return gulp.src('./client/src/style.scss', { sourcemaps: true })
         .pipe(sass())
@@ -25,7 +34,8 @@ gulp.task('build-js', (done) => {
     })
 })
 
-gulp.task('default', gulp.series('build-css', 'build-js', () => {
+gulp.task('default', gulp.series('browser-sync', 'build-css', 'build-js', () => {
     gulp.watch('./client/src/**/*.scss', gulp.series('build-css'));
     gulp.watch('./client/src/**/*.js', gulp.series('build-js'));
+    gulp.watch('./client/dest/**/*.*').on('change', browserSync.reload)
 }));

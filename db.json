@@ -1,10 +1,1 @@
-{
-    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum explicabo quisquam in optio sequi non quam commodi saepe natus beatae consectetur, assumenda debitis adipisci amet asperiores deserunt et corporis eligendi esse quidem ut magni magnam. Blanditiis, maxime? Aspernatur, quam sit.",
-    "regexp": "a+b*",
-    "samples": [
-        "aaaaaaab",
-        "abbbbbb",
-        "hello",
-        "a"
-    ]
-}
+[{"description":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum explicabo quisquam in optio sequi non quam commodi saepe natus beatae consectetur, assumenda debitis adipisci amet asperiores deserunt et corporis eligendi esse quidem ut magni magnam. Blanditiis, maxime? Aspernatur, quam sit.","regexp":"a+b*","samples":["aaaaaaab","abbbbbb","hello","a"]},{"description":"Dolor sit amet consectetur adipisicing elit. Ipsum explicabo quisquam in optio sequi non quam commodi saepe natus beatae consectetur, assumenda debitis adipisci amet asperiores deserunt et corporis eligendi esse quidem ut magni magnam. Blanditiis, maxime? Aspernatur, quam sit.","regexp":"c+d*","samples":["ccccccccd","cdddddddd","helloWorld","c"]},{"description":"Hello","regexp":"e+f*","samples":["ef","efff","hello World","f"]},{"description":"Hello","regexp":"e+f*","samples":["ef","efff","hello World","f"]},{"description":"Hello2","regexp":"e+f*","samples":["ef","efff","hello World","f"]}]
