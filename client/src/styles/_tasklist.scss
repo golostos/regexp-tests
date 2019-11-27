@@ -1,0 +1,17 @@
+.tasks-list {
+    list-style: none;
+    border: 2px solid gray;
+    padding: 10px;
+    border-radius: 3px;
+    a {
+        display: flex;
+        text-decoration: none;
+        // align-items: center;
+    }
+    .task {
+        margin-bottom: 10px;
+    }
+    .id {
+        margin-right: 10px;
+    }
+}

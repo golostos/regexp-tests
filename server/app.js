@@ -20,9 +20,21 @@ app.use(express.static('./client/'));
 app.use('/tasks/:id', express.static('./client/'));
 app.use(express.json())
 
+app.get('/api/alltasks', (req, res, next) => {
+    if (taskReady) {
+        Task.findAll().then(result => {
+            res.json(result);
+        }).catch(error => {
+            console.error(error);
+            res.status(500);
+            res.json({ error: 'Db error' });
+        })
+    }
+})
+
 app.get('/api/tasks/:id', (req, res, next) => {
     if (taskReady) {
-        Task.findOne({ where: {id: req.params.id} })
+        Task.findOne((req.params.id > 0) ? { where: {id: req.params.id} } : {})
         .then(task => {
             if (task === null) throw new Error('Wrong Id')
             res.json(task);
