@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon --ignore client/  --ignore node_modules/ --inspect ./server.js",
+    "server": "nodemon --ignore client/  --ignore node_modules/ --inspect ./server/app.js",
     "dev": "gulp",
     "build-css": "sass --watch client/src/test_sass.scss client/dest/test.css"
   },
@@ -31,5 +31,9 @@
     "whatwg-fetch": "^3.0.0"
   },
   "browserslist": "> 0.25%, not dead",
-  "dependencies": {}
+  "dependencies": {
+    "express": "^4.17.1",
+    "sequelize": "^5.21.2",
+    "sequelize-cli-model-class": "^5.5.3"
+  }
 }
