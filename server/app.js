@@ -3,12 +3,17 @@ const app = express();
 const port = 3000;
 const db = require('../db.json')
 const fs = require('fs')
-const User = require('./db');
-User.sync({ force: true }).then(() => {
-    return User.create({
-        name: 'John',
-        email: 'test@test.ru'
-    });
+
+const User = require('./models/User');
+let userReady = false;
+User.sync().then(() => {
+    userReady = true;
+})
+
+const Task = require('./models/Task');
+let taskReady = false;
+Task.sync().then(() => {
+    taskReady = true;
 })
 
 app.use(express.static('./client/'));
@@ -16,21 +21,37 @@ app.use('/tasks/:id', express.static('./client/'));
 app.use(express.json())
 
 app.get('/api/tasks/:id', (req, res, next) => {
-    let tasksResponse;
-    if (db[req.params.id]) tasksResponse = db[req.params.id]
-    else tasksResponse = { error: 'Wrong Id' }
-    res.json(tasksResponse);
+    if (taskReady) {
+        Task.findOne({ where: {id: req.params.id} })
+        .then(task => {
+            if (task === null) throw new Error('Wrong Id')
+            res.json(task);
+        })
+        .catch(error => {
+            console.error(error);
+            res.json({ error: 'Wrong Id' });
+        })
+    }
 })
 
 app.post('/api/newtask', (req, res, next) => {
-    createNewTask(req, res)
+    if (taskReady) createNewTask(req, res)
 })
 
 function createNewTask(req, res) {
-    db.push(req.body)
-    fs.writeFile('./db.json', JSON.stringify(db, null, 2), () => {
-        res.json({ status: "success" })
+    Task.create(req.body).then(result => {
+        console.log(result);
+        res.status(201);
+        res.json({message: "Success"});
+    }).catch(error => {
+        console.error(error);
+        res.status(500);
+        res.json({message: "Error"});
     })
+    // db.push(req.body)
+    // fs.writeFile('./db.json', JSON.stringify(db, null, 2), () => {
+    //     res.json({ status: "success" })
+    // })
 }
 
 app.listen(port, () => {
