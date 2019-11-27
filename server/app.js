@@ -3,6 +3,13 @@ const app = express();
 const port = 3000;
 const db = require('../db.json')
 const fs = require('fs')
+const User = require('./db');
+User.sync({ force: true }).then(() => {
+    return User.create({
+        name: 'John',
+        email: 'test@test.ru'
+    });
+})
 
 app.use(express.static('./client/'));
 app.use('/tasks/:id', express.static('./client/'));
@@ -21,7 +28,7 @@ app.post('/api/newtask', (req, res, next) => {
 
 function createNewTask(req, res) {
     db.push(req.body)
-    fs.writeFile('./db.json', JSON.stringify(db, null , 2), () => {
+    fs.writeFile('./db.json', JSON.stringify(db, null, 2), () => {
         res.json({ status: "success" })
     })
 }
