@@ -1,7 +1,7 @@
 import 'whatwg-fetch';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './app'
+import App from './app';
 
 import { getDataFromServer } from "./js-modules/get-data";
 import { createSamples } from "./js-modules/samples";
@@ -12,26 +12,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
     ReactDOM.render(<App />, root)
 
-    const container = document.querySelector('.container')
-    if (window.location.pathname === '/') {
-        getDataFromServer('/api/alltasks', (db) => {
-            console.log(db)
-            container.innerHTML = mainTemplate(db);
-        });
-    } else {
-        container.innerHTML = taskTemplate;
-        const loc = /\/tasks\/(\d+)/.exec(window.location.pathname);
-        const taskId = loc ? loc[1] : 0;
-        const regexp = document.querySelector('#regexp');
-        const description = document.querySelector('#description');
-        getDataFromServer('/api/tasks/' + taskId, (db) => {
-            if (db.error) {
-                alert(db.error)
-            } else {
-                regexp.value = db.regexp;
-                description.value = db.description;
-                createSamples(db.samples);
-            }
-        })
-    }
+    // const container = document.querySelector('.container')
+    // if (window.location.pathname === '/') {
+    //     getDataFromServer('/api/alltasks', (db) => {
+    //         console.log(db)
+    //         container.innerHTML = mainTemplate(db);
+    //     });
+    // } else {
+    //     container.innerHTML = taskTemplate;
+    //     const loc = /\/tasks\/(\d+)/.exec(window.location.pathname);
+    //     const taskId = loc ? loc[1] : 0;
+    //     const regexp = document.querySelector('#regexp');
+    //     const description = document.querySelector('#description');
+    //     getDataFromServer('/api/tasks/' + taskId, (db) => {
+    //         if (db.error) {
+    //             alert(db.error)
+    //         } else {
+    //             regexp.value = db.regexp;
+    //             description.value = db.description;
+    //             createSamples(db.samples);
+    //         }
+    //     })
+    // }
 })

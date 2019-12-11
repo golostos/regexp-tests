@@ -1,9 +1,11 @@
 import React from 'react';
+import Task from "./components/Task";
 
 export default function App(props) {
     return (
+        // JSX - javascript and XML
         <div>
-            <h1>Hello!</h1>
+            <Task />
         </div>
     )
 }
