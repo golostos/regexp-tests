@@ -10,7 +10,21 @@ module.exports = {
     devtool: 'inline-source-map',
     module: {
         rules: [
-            { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }
+            { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
+            {
+                test: /\.svg$/,
+                use: [
+                  {
+                    loader: "babel-loader"
+                  },
+                  {
+                    loader: "react-svg-loader",
+                    options: {
+                      jsx: true // true outputs JSX tags
+                    }
+                  }
+                ]
+              }
         ]
     }
 }
