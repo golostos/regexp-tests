@@ -1,4 +1,7 @@
 import 'whatwg-fetch';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './app'
 
 import { getDataFromServer } from "./js-modules/get-data";
 import { createSamples } from "./js-modules/samples";
@@ -6,6 +9,9 @@ import mainTemplate from './templates/main-template'
 import taskTemplate from './templates/task-template'
 
 document.addEventListener('DOMContentLoaded', () => {
+    const root = document.getElementById('root');
+    ReactDOM.render(<App />, root)
+
     const container = document.querySelector('.container')
     if (window.location.pathname === '/') {
         getDataFromServer('/api/alltasks', (db) => {
