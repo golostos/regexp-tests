@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node ./server/app.js",
     "server": "nodemon --ignore client/  --ignore node_modules/ --inspect ./server/app.js",
     "dev": "gulp",
     "build-css": "sass --watch client/src/test_sass.scss client/dest/test.css"
@@ -33,6 +33,7 @@
   "browserslist": "> 0.25%, not dead",
   "dependencies": {
     "express": "^4.17.1",
+    "express-validator": "^6.3.0",
     "mysql2": "^2.0.1",
     "sequelize": "^5.21.2",
     "sequelize-cli-model-class": "^5.5.3"
