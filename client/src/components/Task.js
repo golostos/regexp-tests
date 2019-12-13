@@ -1,6 +1,10 @@
 import React from "react";
 import Samples from "./Samples";
 import Rolling from "../rolling.svg";
+import {
+  Link, 
+  useParams
+} from "react-router-dom";
 
 const timer = function (time, value) {
   return new Promise((resolve, reject) => {
@@ -69,17 +73,3 @@ export default class Task extends React.Component {
     )
   }
 }
-
-// export default function Task(props) {
-//   return (
-//     <>
-//       <h3>Description:</h3>
-//       <textarea className="input" id="description" defaultValue={taskdb.description} />
-//       <h3>Type regexp here:</h3>
-//       <textarea className="input" id="regexp" defaultValue={taskdb.regexp} />
-//       <h3>Samples:</h3>
-//       <Samples samples={taskdb.samples} />
-//       {/* <div className="samples"></div> */}
-//     </>
-//   )
-// }
