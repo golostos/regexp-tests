@@ -1,0 +1,45 @@
+React:
+    JSX
+    функциональные компоненты
+    Пропсы
+    Обработчики (onChange, onClick)
+    Состояние компонента (классы, хуки)
+    Жизненный цикл компонента (componentDidMount,..., useEffect)
+    Классовые компоненты
+    AJAX запросы в React (fetch, get, post)
+    Хуки
+    Router
+
+Сборка проекта:
+    Gulp
+    Webpack
+    Babel
+    CSS сборка
+    JS сборка (модули + Webpack = ?)
+
+Node.js
+    module
+    vanila server
+    express
+    middleware
+    express validator
+    Rest API (http, url)
+    Sequelize (model)
+    mysql
+
+JavaScript
+    class
+    function
+    JS module
+    destruction (const [one, two] = Array)
+    promise
+    async await
+    async последовательность
+    Array methods
+
+CSS
+    flex
+    SASS
+    Специфичность CSS селекторов
+    CSS селекторы правила
+    CSS свойства
